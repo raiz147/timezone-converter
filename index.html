@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Timezone Converter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="converter-card" aria-labelledby="title">
+      <p class="eyebrow">Global Time Utility</p>
+      <h1 id="title">Timezone Converter</h1>
+      <p class="subtitle">Convert date and time between IANA timezones instantly.</p>
+
+      <form id="converter-form" class="converter-form" novalidate>
+        <label class="field-group">
+          <span>Date</span>
+          <input id="date-input" type="date" required />
+        </label>
+
+        <label class="field-group">
+          <span>Time</span>
+          <input id="time-input" type="time" required />
+        </label>
+
+        <label class="field-group">
+          <span>From timezone</span>
+          <input id="from-zone-search" type="search" placeholder="Search timezone" aria-label="Search from timezone" autocomplete="off" />
+          <select id="from-zone" required></select>
+        </label>
+
+        <button id="swap-btn" type="button" class="swap-btn" aria-label="Swap timezones">Swap</button>
+
+        <label class="field-group">
+          <span>To timezone</span>
+          <input id="to-zone-search" type="search" placeholder="Search timezone" aria-label="Search to timezone" autocomplete="off" />
+          <select id="to-zone" required></select>
+        </label>
+
+        <button type="submit" class="convert-btn">Convert</button>
+      </form>
+
+      <section class="result" aria-live="polite">
+        <h2>Result</h2>
+        <p id="result-primary" class="result-primary">Pick values and click Convert.</p>
+        <p id="result-secondary" class="result-secondary"></p>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
